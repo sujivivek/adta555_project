@@ -2,6 +2,8 @@
 # pip install streamlit
 
 import streamlit as st
+from PIL import Image
+import os
 
 st.title("Model Evaluation Dashboard")
 
@@ -13,14 +15,17 @@ metric_to_files = {
     "Same vs Real": ("images/SameReal.jpg")
 }
 
-metric = st.selectbox("Select Metric to Compare", list(metric_to_files.keys()))
+# Streamlit Title
+st.title("Model Metrics Dashboard")
 
-# Load and Display Images
-model_a_path = metric_to_files[metric]
+# Dropdown for metric selection
+metric = st.selectbox("Select Metric to View", list(metric_to_image.keys()))
 
-# Check if files exist
-col1 = st.columns(1)
-with col1:
-    st.subheader("📌 Model A")
-    img_a = Image.open(model_a_path)
-    st.image(img_a, use_column_width=True)
+# Load and display image
+image_path = metric_to_image[metric]
+
+if os.path.exists(image_path):
+    image = Image.open(image_path)
+    st.image(image, caption=metric, use_column_width=True)
+else:
+    st.error(f"Image not found: {image_path}")
