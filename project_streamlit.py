@@ -5,9 +5,7 @@ import streamlit as st
 from PIL import Image
 import os
 
-st.title("Model Evaluation Dashboard")
-
-metric_to_files = {
+metric_to_image = {
     "Loss Curves": ("images/LSTM_Loss.jpg"),
     "Confusion Matrix": ("images/LSTM_CM.jpg"),
     "Accuracy": ("images/LSTM_Accuracy.png"),
