@@ -19,12 +19,8 @@ metric = st.selectbox("Select Metric to Compare", list(metric_to_files.keys()))
 model_a_path = metric_to_files[metric]
 
 # Check if files exist
-if not (os.path.exists(model_a_path) and os.path.exists(model_b_path)):
-    st.error("One or more image files are missing.")
-else:
-    col1 = st.columns(1)
-
-    with col1:
-        st.subheader("📌 Model A")
-        img_a = Image.open(model_a_path)
-        st.image(img_a, use_column_width=True)
+col1 = st.columns(1)
+with col1:
+    st.subheader("📌 Model A")
+    img_a = Image.open(model_a_path)
+    st.image(img_a, use_column_width=True)
