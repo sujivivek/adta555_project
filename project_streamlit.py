@@ -14,7 +14,9 @@ metric_to_image = {
 }
 
 # Streamlit Title
-st.title("Model Metrics Dashboard")
+st.title("ADTA5550 Project Model Metrics Dashboard")
+st.header("Group 2")
+st.subheader("Omar Perez, Goutham Sai Reddy Bolleddula, Sujatha Selvabarathi")
 
 # Dropdown for metric selection
 metric = st.selectbox("Select Metric to View", list(metric_to_image.keys()))
