@@ -10,7 +10,7 @@ metric_to_image = {
     "Confusion Matrix": ("images/LSTM_CM.png"),
     "Accuracy": ("images/LSTM_Accuracy.png"),
     "Word Count Distribution": ("images/WordCount.png"),
-    "Same vs Real": ("images/SameReal.png")
+    "Fake vs Real": ("images/SameReal.png")
 }
 
 # Streamlit Title
