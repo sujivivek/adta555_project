@@ -10,13 +10,13 @@ metric_to_files = {
     "Confusion Matrix": ("images/LSTM_CM.jpg"),
     "Accuracy": ("images/LSTM_Accuracy.png"),
     "Word Count Distribution": ("images/WordCount.jpg"),
-    "Same vs Real": ("images/SameReal.jpg"),
+    "Same vs Real": ("images/SameReal.jpg")
 }
 
 metric = st.selectbox("Select Metric to Compare", list(metric_to_files.keys()))
 
 # Load and Display Images
-model_a_path, model_b_path = metric_to_files[metric]
+model_a_path = metric_to_files[metric]
 
 # Check if files exist
 if not (os.path.exists(model_a_path) and os.path.exists(model_b_path)):
