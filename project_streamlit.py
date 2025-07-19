@@ -6,11 +6,11 @@ from PIL import Image
 import os
 
 metric_to_image = {
-    "Loss Curves": ("images/LSTM_Loss.jpg"),
-    "Confusion Matrix": ("images/LSTM_CM.jpg"),
+    "Loss Curves": ("images/LSTM_Loss.png"),
+    "Confusion Matrix": ("images/LSTM_CM.png"),
     "Accuracy": ("images/LSTM_Accuracy.png"),
-    "Word Count Distribution": ("images/WordCount.jpg"),
-    "Same vs Real": ("images/SameReal.jpg")
+    "Word Count Distribution": ("images/WordCount.png"),
+    "Same vs Real": ("images/SameReal.png")
 }
 
 # Streamlit Title
