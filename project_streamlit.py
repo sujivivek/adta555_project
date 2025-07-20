@@ -26,11 +26,19 @@ image_path = metric_to_image[metric]
 
 if os.path.exists(image_path):
     image = Image.open(image_path)
-    caption(metric_to_image[metric])
+    caption(metric)
     st.image(image, caption=metric, use_container_width=True)
 else:
     st.error(f"Image not found: {image_path}")
 
-def caption():
-    st.write(metric_to_image[metric])
-    
+def caption(metric):
+    if(metric == 'Loss Curves'):
+        st.write('Loss curve of the LSTM model')
+    elif(metric == 'Confusion Matrix'):
+        st.write('Confusion Matrix of the LSTM model')
+    elif(metric == 'Accuracy'):
+        st.write('Accuracy of the LSTM model')
+    elif(metric == 'Word Count Distribution'):
+        st.write('EDA: Word count distribution')
+    elif(metric == 'Fake vs Real'):
+        st.write('EDA: Count of Fake vs Real headlines')
