@@ -5,6 +5,18 @@ import streamlit as st
 from PIL import Image
 import os
 
+def caption(metric):
+    if(metric == 'Loss Curves'):
+        st.write('Loss curve of the LSTM model')
+    elif(metric == 'Confusion Matrix'):
+        st.write('Confusion Matrix of the LSTM model')
+    elif(metric == 'Accuracy'):
+        st.write('Accuracy of the LSTM model')
+    elif(metric == 'Word Count Distribution'):
+        st.write('EDA: Word count distribution')
+    elif(metric == 'Fake vs Real'):
+        st.write('EDA: Count of Fake vs Real headlines')
+
 metric_to_image = {
     "Loss Curves": ("images/LSTM_Loss.png"),
     "Confusion Matrix": ("images/LSTM_CM.png"),
@@ -30,15 +42,3 @@ if os.path.exists(image_path):
     st.image(image, caption=metric, use_container_width=True)
 else:
     st.error(f"Image not found: {image_path}")
-
-def caption(metric):
-    if(metric == 'Loss Curves'):
-        st.write('Loss curve of the LSTM model')
-    elif(metric == 'Confusion Matrix'):
-        st.write('Confusion Matrix of the LSTM model')
-    elif(metric == 'Accuracy'):
-        st.write('Accuracy of the LSTM model')
-    elif(metric == 'Word Count Distribution'):
-        st.write('EDA: Word count distribution')
-    elif(metric == 'Fake vs Real'):
-        st.write('EDA: Count of Fake vs Real headlines')
