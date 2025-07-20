@@ -26,7 +26,7 @@ image_path = metric_to_image[metric]
 
 if os.path.exists(image_path):
     image = Image.open(image_path)
-    st.text(metric)
+    st.text(metric_to_image[metric])
     st.image(image, caption=metric, use_container_width=True)
 else:
     st.error(f"Image not found: {image_path}")
